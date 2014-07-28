@@ -9,6 +9,12 @@ def rad(d):
     """Convert degrees to radians"""
     return np.pi * d / 180
 
+def gratingToPGM(alpha, beta):
+  """Convert alpha, beta to PGM angles"""
+  grtPos = (np.pi / 2.0) - beta
+  mirPos = ((np.pi / 2.0 - alpha) + (np.pi / 2.0 - beta)) / 2.0
+  return mirPos, grtPos
+
 def calcC(grating, R, lam, allParams = False):
     """Calculate "c" factor for PGM from grating exp. geometry"""
     
